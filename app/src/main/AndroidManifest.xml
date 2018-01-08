@@ -3,6 +3,8 @@
     package="com.framgia.soundclound">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:name=".MainApllication"
@@ -21,6 +23,7 @@
         </activity>
         <activity android:name=".screen.detailgenre.GenreDetailActivity" />
         <activity android:name=".screen.playtrack.PlayTrackActivity"></activity>
+
     </application>
 
 </manifest>
