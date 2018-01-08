@@ -3,5 +3,4 @@
     <declare-styleable name="IsSwipeViewPager">
         <attr name="isEnableSwipe" format="boolean" />
     </declare-styleable>
-
 </resources>
