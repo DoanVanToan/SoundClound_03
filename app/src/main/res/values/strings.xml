@@ -1,9 +1,17 @@
 <resources>
     <string name="app_name">SoundClound_03</string>
-
     <string name="title_home">Home</string>
     <string name="title_playlist">Playlist</string>
     <string name="title_local">Local</string>
     <string name="title_favorite">Favorite</string>
-
+    <!--name genres-->
+    <string name="genres_all">All</string>
+    <string name="genres_classic">Classic</string>
+    <string name="genres_country">Country</string>
+    <string name="genres_depp_house">Deep House</string>
+    <string name="genres_pop">POP</string>
+    <string name="genres_popblas">PopBlas</string>
+    <string name="genres_rock">Rock</string>
+    <string name="genres_edm">EDM</string>
+    <string name="genres_electronic">Electronic</string>
 </resources>

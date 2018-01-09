@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="genre"
+            type="com.framgia.soundclound.data.model.Genre" />
+
+        <variable
+            name="listener"
+            type="com.framgia.soundclound.screen.home.OnItemClickListener" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="@dimen/item_genres_w"
+        android:layout_height="@dimen/item_genres_h"
+        android:onClick="@{()->listener.onClick(genre)}">
+        <ImageView
+            android:tint="@color/tint_color"
+            android:id="@+id/img_background"
+            src="@{genre.image}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/icon"
+            src="@{genre.icon}"
+            android:layout_width="@dimen/icon_genres_w"
+            android:layout_height="@dimen/icon_genres_h"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="@id/img_background"
+            app:layout_constraintEnd_toEndOf="@+id/img_background"
+            app:layout_constraintStart_toStartOf="@id/img_background"
+            app:layout_constraintTop_toTopOf="@id/img_background" />
+
+        <TextView
+            android:id="@+id/tv_name_genres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:text="@{genre.name}"
+            android:textColor="@color/color_white"
+            app:layout_constraintBottom_toBottomOf="@id/img_background"
+            app:layout_constraintEnd_toEndOf="@+id/img_background"
+            app:layout_constraintStart_toStartOf="@id/img_background"
+            app:layout_constraintTop_toBottomOf="@id/icon"
+            app:layout_constraintVertical_bias="0.4" />
+    </android.support.constraint.ConstraintLayout>
+</layout>
