@@ -4,7 +4,7 @@
     <string name="title_playlist">Playlist</string>
     <string name="title_local">Local</string>
     <string name="title_favorite">Favorite</string>
-    <!--name genres-->
+
     <string name="genres_all">All</string>
     <string name="genres_classic">Classic</string>
     <string name="genres_country">Country</string>
@@ -14,4 +14,8 @@
     <string name="genres_rock">Rock</string>
     <string name="genres_edm">EDM</string>
     <string name="genres_electronic">Electronic</string>
+
+    <string name="image_track">image_track</string>
+    <string name="image_more_info">moreinfo</string>
+
 </resources>

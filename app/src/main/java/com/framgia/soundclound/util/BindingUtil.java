@@ -6,6 +6,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.RecyclerView;
 
 import com.framgia.soundclound.screen.main.TabType;
 
@@ -58,6 +59,11 @@ public class BindingUtil {
             tabLayout.getTabAt(TabType.HOME).getIcon().setColorFilter(selectedColor,
                     PorterDuff.Mode.SRC_ATOP);
         }
+    }
+
+    @BindingAdapter({"recyclerAdapter"})
+    public static void setAdapter(RecyclerView recyclerView, RecyclerView.Adapter adapter) {
+        recyclerView.setAdapter(adapter);
     }
 
 }

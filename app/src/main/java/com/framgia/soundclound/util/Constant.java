@@ -12,5 +12,13 @@ public class Constant {
     public static final String OFF_SET = "offset";
     public static final String LIMIT = "limit";
     public static final String ERROR_NULL = "null_data";
+
+    public static final String EXTRA_GENRE = "etgenre";
+
+    public static final int LIMIT_DEFAULT = 20;
+    public static final int OFF_SET_DEFAULT = 0;
+
+    public static final String LINK_DEFAULT = "https://zmp3-static.zadn.vn/skins/zmp3-v5.1/images/logo200.png";
+    public static final String ERROR_TEXT = "error";
 }
 
