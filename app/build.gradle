@@ -6,6 +6,7 @@ android {
     }
     compileSdkVersion 26
     defaultConfig {
+        buildConfigField "String", "API_KEY", "\"${API_KEY}\""
         applicationId "com.framgia.soundclound"
         minSdkVersion 19
         targetSdkVersion 26
@@ -32,6 +33,7 @@ dependencies {
 
     compile 'com.google.code.gson:gson:2.8.1'
 
+    compile 'com.android.support:cardview-v7:26.1.0'
     compile 'com.android.support:appcompat-v7:26.1.0'
     compile 'com.android.support:design:26.1.0'
 

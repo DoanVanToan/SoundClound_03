@@ -9,6 +9,7 @@
             type="com.framgia.soundclound.screen.main.MainViewModel" />
     </data>
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -22,7 +23,8 @@
             android:background="@color/color_white"
             selectedColor="@{viewModel.tabSelectedColor}"
             unSelectedColor="@{viewModel.tabUnSelectedColor}"
-            setTabHome="@{viewModel.tabSelectedHome}">
+            setTabHome="@{viewModel.tabSelectedHome}"
+            viewPager="@{viewPager}">
 
             <android.support.design.widget.TabItem
                 android:text="@string/title_home"
@@ -52,12 +54,13 @@
         </android.support.design.widget.TabLayout>
 
         <com.framgia.soundclound.widget.IsSwipeViewPager
-            app:isEnableSwipe="false"
             android:id="@+id/view_pager"
             pagerAdapter="@{viewModel.pagerAdapter}"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@android:color/white"
-            android:layout_width="match_parent"/>
+            app:isEnableSwipe="false" />
 
     </LinearLayout>
 </layout>
+
