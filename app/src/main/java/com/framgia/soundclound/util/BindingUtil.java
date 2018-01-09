@@ -20,9 +20,10 @@ public class BindingUtil {
         viewPager.setAdapter(adapter);
     }
 
-    @BindingAdapter({"selectedColor", "unSelectedColor"})
+    @BindingAdapter({"selectedColor", "unSelectedColor", "viewPager"})
     public static void setupTabIndicatorListener(final TabLayout tabLayout, final int selectedColor,
-                                                 final int unSelectedColor) {
+                                                 final int unSelectedColor,
+                                                 final ViewPager viewPager) {
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -31,6 +32,7 @@ public class BindingUtil {
                 }
                 tab.getIcon().setColorFilter(ContextCompat.getColor(tabLayout.getContext(),
                         selectedColor), PorterDuff.Mode.SRC_ATOP);
+                viewPager.setCurrentItem(tab.getPosition());
             }
 
             @Override
@@ -57,4 +59,5 @@ public class BindingUtil {
                     PorterDuff.Mode.SRC_ATOP);
         }
     }
+
 }
