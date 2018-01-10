@@ -26,5 +26,6 @@
     <string name="action_ok">OK</string>
     <string name="action_cancel">Cancel</string>
     <string name="msg_delele_album">Do you want delete album ? </string>
+    <string name="action_add">Add</string>
 
 </resources>

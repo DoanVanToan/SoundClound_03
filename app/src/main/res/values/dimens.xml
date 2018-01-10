@@ -17,4 +17,10 @@
     <dimen name="dp_24">24dp</dimen>
     <dimen name="dp_8">8dp</dimen>
 
+    <dimen name="tv_margin">10dp</dimen>
+    <dimen name="size_text_item_normal">20sp</dimen>
+    <dimen name="size_text_item_small">12sp</dimen>
+    <dimen name="icon_dot_margin_right">15dp</dimen>
+    <dimen name="icon_dot_w">30dp</dimen>
+    <dimen name="icon_dot_h">40dp</dimen>
 </resources>
