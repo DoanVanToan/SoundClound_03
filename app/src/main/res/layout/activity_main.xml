@@ -30,17 +30,17 @@
                 android:text="@string/title_home"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:icon="@drawable/ic_favorite_gray_24dp" />
+                android:icon="@drawable/ic_home_black_24dp" />
 
             <android.support.design.widget.TabItem
                 android:text="@string/title_playlist"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:icon="@drawable/ic_favorite_gray_24dp" />
+                android:icon="@drawable/ic_audiotrack_black_24dp" />
 
             <android.support.design.widget.TabItem
                 android:text="@string/title_local"
-                android:icon="@drawable/ic_favorite_gray_24dp"
+                android:icon="@drawable/ic_file_download_black_24dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 

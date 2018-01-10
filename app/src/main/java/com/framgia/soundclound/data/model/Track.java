@@ -3,11 +3,13 @@ package com.framgia.soundclound.data.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 /**
  * Created by Sony on 1/5/2018.
  */
 
-public class Track {
+public class Track implements Serializable {
     @SerializedName("artwork_url")
     @Expose
     private String mArtworkUrl;

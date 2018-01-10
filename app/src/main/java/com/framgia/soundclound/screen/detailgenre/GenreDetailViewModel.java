@@ -3,6 +3,7 @@ package com.framgia.soundclound.screen.detailgenre;
 import android.content.Context;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.framgia.soundclound.BR;
@@ -10,6 +11,7 @@ import com.framgia.soundclound.data.model.Track;
 import com.framgia.soundclound.data.source.TrackDataSource;
 import com.framgia.soundclound.data.source.TrackRepository;
 import com.framgia.soundclound.data.source.remote.TrackRemoteDataSource;
+import com.framgia.soundclound.screen.moretrack.MoreTrackFragment;
 import com.framgia.soundclound.util.Constant;
 
 import java.util.List;
@@ -77,10 +79,12 @@ public class GenreDetailViewModel extends BaseObservable implements TrackClickLi
     @Override
     public void onItemTrackClick(Track track) {
         // TODO: 1/10/2018 open playtrackactivity
+
     }
 
     @Override
     public void onClickMore(Track track) {
-        // TODO: 1/10/2018  open dialog
+        MoreTrackFragment.newInstance(track)
+                .show(((AppCompatActivity) mContext).getSupportFragmentManager(), null);
     }
 }
