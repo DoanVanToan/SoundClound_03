@@ -4,6 +4,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.framgia.soundclound.screen.home.HomeFragment;
+
 /**
  * Created by Sony on 1/4/2018.
  */
@@ -20,7 +22,7 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case TabType.HOME:
-                return new Fragment();
+                return HomeFragment.newInstance();
             case TabType.PLAY_LIST:
                 return new Fragment();
             case TabType.LOCAL:

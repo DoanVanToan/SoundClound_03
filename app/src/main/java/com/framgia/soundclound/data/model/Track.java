@@ -22,7 +22,7 @@ public class Track {
     private int mDownloadCount;
     @SerializedName("download_url")
     @Expose
-    private int mDuration;
+    private String mDowloadUrl;
     @SerializedName("full_duration")
     @Expose
     private int mFullDuration;
@@ -61,7 +61,8 @@ public class Track {
         mTitle = title;
     }
 
-    public Track() {}
+    public Track() {
+    }
 
     public String getArtworkUrl() {
         return mArtworkUrl;
@@ -95,12 +96,13 @@ public class Track {
         mDownloadCount = downloadCount;
     }
 
-    public int getDuration() {
-        return mDuration;
+
+    public String getDowloadUrl() {
+        return mDowloadUrl;
     }
 
-    public void setDuration(int duration) {
-        mDuration = duration;
+    public void setDowloadUrl(String dowloadUrl) {
+        mDowloadUrl = dowloadUrl;
     }
 
     public int getFullDuration() {
@@ -189,6 +191,25 @@ public class Track {
 
     public void setDisplayDate(String displayDate) {
         mDisplayDate = displayDate;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        Track track = (Track) o;
+
+        return mId == track.mId;
+    }
+
+    @Override
+    public int hashCode() {
+        return mId;
     }
 
 }
