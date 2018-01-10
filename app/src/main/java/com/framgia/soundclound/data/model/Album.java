@@ -1,14 +1,17 @@
 package com.framgia.soundclound.data.model;
 
+import java.util.List;
+
 /**
  * Created by Bui Danh Nam on 8/1/2018.
  */
 
 public class Album {
     private String mName;
-    private String mKeyName;
-    private int mNumbMusic;
+    private int mId;
+    private int mNumberSong;
     private String mImage;
+    private List<Track> mTracks;
 
     public Album() {
     }
@@ -21,20 +24,20 @@ public class Album {
         mName = name;
     }
 
-    public String getKeyName() {
-        return mKeyName;
+    public int getId() {
+        return mId;
     }
 
-    public void setKeyName(String keyName) {
-        mKeyName = keyName;
+    public void setId(int id) {
+        mId = id;
     }
 
-    public int getNumbMusic() {
-        return mNumbMusic;
+    public int getNumberSong() {
+        return mNumberSong;
     }
 
-    public void setNumbMusic(int numbMusic) {
-        mNumbMusic = numbMusic;
+    public void setNumberSong(int numberSong) {
+        mNumberSong = numberSong;
     }
 
     public String getImage() {
@@ -42,6 +45,22 @@ public class Album {
     }
 
     public void setImage(String image) {
-        this.mImage = image;
+        mImage = image;
+    }
+
+    public List<Track> getTracks() {
+        return mTracks;
+    }
+
+    public void setTracks(List<Track> tracks) {
+        mTracks = tracks;
+    }
+
+    public static class AlbumEntity {
+        public static final String NAME_ALBUM = "name";
+        public static final String ID_ALBUM = "nam_key";
+        public static final String NUMBER_SONG = "number_song";
+        public static final String LIST_TRACK = "list_track";
+        public static final String IMAGE_ALBUM = "image";
     }
 }

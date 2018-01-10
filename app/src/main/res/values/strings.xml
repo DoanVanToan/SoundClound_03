@@ -4,7 +4,6 @@
     <string name="title_playlist">Playlist</string>
     <string name="title_local">Local</string>
     <string name="title_favorite">Favorite</string>
-
     <string name="genres_all">All</string>
     <string name="genres_classic">Classic</string>
     <string name="genres_country">Country</string>
@@ -14,8 +13,18 @@
     <string name="genres_rock">Rock</string>
     <string name="genres_edm">EDM</string>
     <string name="genres_electronic">Electronic</string>
-
     <string name="image_track">image_track</string>
     <string name="image_more_info">moreinfo</string>
+    <string name="title_add_album">Add Album</string>
+    <string name="msg_name_album">Name Album</string>
+    <string name="msg_err_name_exist">Album name  is exist !!</string>
+    <string name="msg_err_name_null">Name album is empty</string>
+    <string name="song">Songs</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_rename">Rename</string>
+    <string name="msg_rename_album">Rename Album</string>
+    <string name="action_ok">OK</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="msg_delele_album">Do you want delete album ? </string>
 
 </resources>

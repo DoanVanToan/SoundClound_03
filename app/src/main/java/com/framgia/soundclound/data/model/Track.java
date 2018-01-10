@@ -61,7 +61,8 @@ public class Track {
         mTitle = title;
     }
 
-    public Track() {}
+    public Track() {
+    }
 
     public String getArtworkUrl() {
         return mArtworkUrl;
@@ -94,6 +95,7 @@ public class Track {
     public void setDownloadCount(int downloadCount) {
         mDownloadCount = downloadCount;
     }
+
 
     public String getDowloadUrl() {
         return mDowloadUrl;
@@ -189,6 +191,25 @@ public class Track {
 
     public void setDisplayDate(String displayDate) {
         mDisplayDate = displayDate;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        Track track = (Track) o;
+
+        return mId == track.mId;
+    }
+
+    @Override
+    public int hashCode() {
+        return mId;
     }
 
 }
