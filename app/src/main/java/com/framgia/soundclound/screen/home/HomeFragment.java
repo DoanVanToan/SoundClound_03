@@ -31,7 +31,7 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         FragmentHomeBinding fragmentHomeBinding = DataBindingUtil.inflate(inflater,
                 R.layout.fragment_home, container, false);
-        HomeViewModel homeViewModel = new HomeViewModel();
+        HomeViewModel homeViewModel = new HomeViewModel(getContext());
         fragmentHomeBinding.setViewmodelHome(homeViewModel);
         return fragmentHomeBinding.getRoot();
     }

@@ -22,7 +22,7 @@ public class Track {
     private int mDownloadCount;
     @SerializedName("download_url")
     @Expose
-    private int mDuration;
+    private String mDowloadUrl;
     @SerializedName("full_duration")
     @Expose
     private int mFullDuration;
@@ -95,12 +95,12 @@ public class Track {
         mDownloadCount = downloadCount;
     }
 
-    public int getDuration() {
-        return mDuration;
+    public String getDowloadUrl() {
+        return mDowloadUrl;
     }
 
-    public void setDuration(int duration) {
-        mDuration = duration;
+    public void setDowloadUrl(String dowloadUrl) {
+        mDowloadUrl = dowloadUrl;
     }
 
     public int getFullDuration() {

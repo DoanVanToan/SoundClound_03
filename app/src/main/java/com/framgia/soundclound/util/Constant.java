@@ -13,7 +13,7 @@ public class Constant {
     public static final String LIMIT = "limit";
     public static final String ERROR_NULL = "null_data";
 
-    public static final String EXTRA_GENRE = "etgenre";
+    public static final String EXTRA_GENRE = "com.framgia.soundcloud.EXTRA_GENRE_NAME";
 
     public static final int LIMIT_DEFAULT = 20;
     public static final int OFF_SET_DEFAULT = 0;
