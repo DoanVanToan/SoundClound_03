@@ -17,6 +17,7 @@ import java.util.List;
 
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
     private List<Genre> mGenres;
+    private OnItemClickListener mOnItemClickListener;
 
     public HomeAdapter(List<Genre> genres) {
         mGenres = genres;
@@ -33,6 +34,10 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.bindingdata(mGenres.get(position));
+    }
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        mOnItemClickListener = onItemClickListener;
     }
 
     @Override
@@ -55,6 +60,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
         public void bindingdata(Genre genres) {
             if (genres != null) {
                 mBinding.setGenre(genres);
+                mBinding.setListener(mOnItemClickListener);
                 mBinding.executePendingBindings();
             }
         }
