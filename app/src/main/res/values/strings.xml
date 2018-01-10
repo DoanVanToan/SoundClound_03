@@ -27,4 +27,8 @@
     <string name="action_cancel">Cancel</string>
     <string name="msg_delele_album">Do you want delete album ? </string>
 
+    <string name="title_add_favorite">Thêm vào danh sách bài hát yêu thích</string>
+    <string name="title_download">Tải bài hát về máy</string>
+    <string name="title_like">like track</string>
+    <string name="title_track">imagetrack</string>
 </resources>

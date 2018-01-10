@@ -49,6 +49,7 @@
             android:layout_height="wrap_content" />
 
         <ImageView
+            android:id="@+id/image_view_more"
             android:contentDescription="@string/image_more_info"
             android:layout_width="@dimen/dp_24"
             android:layout_height="match_parent"
