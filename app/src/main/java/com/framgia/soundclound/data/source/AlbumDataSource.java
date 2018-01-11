@@ -22,10 +22,11 @@ public interface AlbumDataSource {
 
     Album getAlbumByName(String nameAlbum);
 
-    boolean addTrackinAlbum(Album album, Track track);
+    boolean addTrack(int idAlbum, Track track);
 
-    boolean remoteTrack(Album album, Track track);
+    List<Track> getAllTrack(int idAlbum);
+
+    boolean removeTrack(int idAlbum, int idTrack);
 
     boolean renameAlbum(Album album);
-
 }
