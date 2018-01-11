@@ -1,5 +1,7 @@
 package com.framgia.soundclound.data.source;
 
+import android.content.Context;
+
 import com.framgia.soundclound.data.model.Track;
 
 import java.util.List;
@@ -20,4 +22,6 @@ public interface TrackDataSource {
 
     void getListTrack(String url, String genre, int limit, int offSet,
                       Callback<List<Track>> callback);
+
+    List<Track> getLocalTrack();
 }

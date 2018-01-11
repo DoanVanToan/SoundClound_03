@@ -87,7 +87,7 @@
 
         <TextView
             android:textColor="@color/color_white"
-            android:text="@string/title_download"
+            android:text="@{viewModel.canDownLoad}"
             android:layout_marginLeft="@dimen/dp_28"
             android:layout_marginTop="@dimen/dp_28"
             android:layout_marginBottom="@dimen/dp_24"

@@ -37,7 +37,7 @@ public class MoreTrackFragment extends BottomSheetDialogFragment {
         // Inflate the layout for this fragment
         FragmentMoreTrackBinding moreTrackBinding = DataBindingUtil.inflate(inflater,
                 R.layout.fragment_more_track, container, false);
-        moreTrackBinding.setViewModel(new MoreTrackViewModel(
+        moreTrackBinding.setViewModel(new MoreTrackViewModel(getContext(),
                 (Track) getArguments().get(Constant.ARGUMENT_TRACK)));
         return moreTrackBinding.getRoot();
     }
