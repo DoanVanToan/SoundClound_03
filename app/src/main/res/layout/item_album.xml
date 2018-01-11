@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="album"
+            type="com.framgia.soundclound.data.model.Album" />
+
+        <variable
+            name="listener"
+            type="com.framgia.soundclound.screen.playlist.OnItemAlbumClick" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_album_h"
+        android:background="@drawable/background_item_recycleview"
+        android:onClick="@{()->listener.onItemClick(album)}">
+
+        <ImageView
+            android:id="@+id/image_album"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_8"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginTop="@dimen/dp_8"
+            app:imgResource="@{album.image}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_name_album"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/tv_margin"
+            android:layout_marginTop="@dimen/tv_margin"
+            android:text="@{album.name}"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/size_text_item_normal"
+            app:layout_constraintBottom_toTopOf="@id/tv_num_music"
+            app:layout_constraintLeft_toRightOf="@id/image_album"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_num_music"
+            settext="@{album.numberSong}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/tv_margin"
+            android:layout_marginStart="@dimen/tv_margin"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/size_text_item_small"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/image_album"
+            app:layout_constraintTop_toBottomOf="@id/tv_name_album" />
+
+        <ImageView
+            android:id="@+id/image_dot"
+            android:layout_width="@dimen/icon_dot_w"
+            android:layout_height="@dimen/icon_dot_h"
+            android:layout_margin="@dimen/icon_dot_margin_right"
+            android:layout_marginTop="@dimen/item_genres_w"
+            android:onClick="@{() -> listener.onItemMoreClick( imageDot, album)}"
+            android:src="@drawable/icon_dot"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
