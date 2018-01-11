@@ -25,6 +25,10 @@ public class PublisherMetadata {
     @Expose
     private boolean mContainsMusic;
 
+    public PublisherMetadata(String artist) {
+        mArtist = artist;
+    }
+
     public int getId() {
         return mId;
     }

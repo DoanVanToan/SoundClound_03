@@ -1,6 +1,8 @@
 package com.framgia.soundclound.util;
 
 
+import android.Manifest;
+
 /**
  * Created by Sony on 1/8/2018.
  */
@@ -12,6 +14,8 @@ public class Constant {
     public static final String OFF_SET = "offset";
     public static final String LIMIT = "limit";
     public static final String ERROR_NULL = "null_data";
+    public static final String[] PERMISSON =
+            new String[]{Manifest.permission.READ_EXTERNAL_STORAGE};
 
     public static final String EXTRA_GENRE = "com.framgia.soundcloud.EXTRA_GENRE_NAME";
     public static final String ARGUMENT_TRACK = "com.framgia.soundcloud.ARGUMENT_TRACK";
@@ -27,6 +31,7 @@ public class Constant {
 
     public static final String TABLE_ALBUM = "album";
     public static final String DATABASE_NAME = "DB_SOUNDCLOUND";
+    public static final int REQUEST_READ_STORAGE = 100;
 
 }
 

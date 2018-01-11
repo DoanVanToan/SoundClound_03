@@ -10,6 +10,7 @@
     <dimen name="icon_genres_h">50dp</dimen>
 
     <dimen name="dp_72">72dp</dimen>
+
     <dimen name="dp_16">16dp</dimen>
     <dimen name="dp_60">60dp</dimen>
     <dimen name="dp_12">12dp</dimen>
@@ -37,3 +38,4 @@
     <dimen name="icon_dot_w">30dp</dimen>
     <dimen name="icon_dot_h">40dp</dimen>
 </resources>
+

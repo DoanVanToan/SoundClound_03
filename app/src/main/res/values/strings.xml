@@ -32,10 +32,12 @@
     <string name="title_download">Tải bài hát về máy</string>
     <string name="title_like">like track</string>
     <string name="title_track">imagetrack</string>
+
     <string name="title_back">back</string>
     <string name="title_loop">loop</string>
     <string name="title_previous">previous</string>
     <string name="title_pause">pause</string>
     <string name="title_next">next</string>
     <string name="title_shuffle">shuffle</string>
+
 </resources>
