@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.framgia.soundclound.screen.playtrack.PlayTrackViewModel"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.framgia.soundclound.screen.playtrack.PlayTrackActivity">
+
+        <ImageView
+            android:contentDescription="@string/title_back"
+            android:src="@drawable/ic_arrow_back_black_24dp"
+            android:id="@+id/image_view_back"
+            android:layout_margin="@dimen/dp_16"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="@dimen/dp_36"
+            android:layout_height="@dimen/dp_36" />
+
+        <TextView
+            android:id="@+id/text_view_track_name"
+            android:textSize="@dimen/sp_14"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_16"
+            app:layout_constraintLeft_toRightOf="@id/image_view_back"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/text_view_artist_track"
+            android:textSize="@dimen/sp_12"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_marginStart="@dimen/dp_16"
+            app:layout_constraintLeft_toRightOf="@id/image_view_back"
+            app:layout_constraintTop_toBottomOf="@id/text_view_track_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:contentDescription="@string/title_track"
+            android:id="@+id/image_view_play_track"
+            android:src="@drawable/icon_musicedm"
+            app:layout_constraintVertical_bias="0.25"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@color/color_orange"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_view_artist_track"
+            android:layout_width="@dimen/dp_250"
+            android:layout_height="@dimen/dp_250" />
+
+        <ImageView
+            android:contentDescription="@string/title_like"
+            android:id="@+id/image_view_like_track"
+            android:src="@drawable/ic_favorite_border_black_24dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginStart="@dimen/dp_80"
+            android:layout_marginTop="@dimen/dp_30"
+            app:layout_constraintTop_toBottomOf="@id/image_view_play_track"
+            android:layout_width="@dimen/dp_32"
+            android:layout_height="@dimen/dp_32" />
+
+        <ImageView
+            android:contentDescription="@string/title_download"
+            android:src="@drawable/ic_file_download_black_24dp"
+            android:layout_width="@dimen/dp_32"
+            android:layout_height="@dimen/dp_32"
+            android:layout_marginTop="@dimen/dp_30"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="@dimen/dp_80"
+            app:layout_constraintTop_toBottomOf="@id/image_view_play_track" />
+
+        <SeekBar
+            android:layout_marginStart="@dimen/dp_45"
+            android:id="@+id/seek_bar_play_track"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginLeft="@dimen/dp_45"
+            android:layout_marginRight="@dimen/dp_45"
+            app:layout_constraintTop_toBottomOf="@id/image_view_like_track"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:contentDescription="@string/title_loop"
+            android:id="@+id/image_view_loop"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            android:layout_marginTop="@dimen/dp_16"
+            app:layout_constraintTop_toBottomOf="@id/seek_bar_play_track"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/image_view_previous"
+            android:layout_width="@dimen/dp_36"
+            android:layout_height="@dimen/dp_36" />
+        <ImageView
+            android:contentDescription="@string/title_previous"
+            app:layout_constraintRight_toLeftOf="@id/image_pause"
+            android:id="@+id/image_view_previous"
+            app:layout_constraintLeft_toRightOf="@id/image_view_loop"
+            android:layout_marginTop="@dimen/dp_16"
+            app:layout_constraintTop_toBottomOf="@id/seek_bar_play_track"
+            android:layout_width="@dimen/dp_56"
+            android:layout_height="@dimen/dp_56" />
+        <ImageView
+            android:contentDescription="@string/title_pause"
+            app:layout_constraintRight_toLeftOf="@id/image_next"
+            android:id="@+id/image_pause"
+            app:layout_constraintLeft_toRightOf="@id/image_view_previous"
+            android:layout_marginTop="@dimen/dp_16"
+            app:layout_constraintTop_toBottomOf="@id/seek_bar_play_track"
+            android:layout_width="@dimen/dp_56"
+            android:layout_height="@dimen/dp_56" />
+        <ImageView
+            android:contentDescription="@string/title_next"
+            app:layout_constraintRight_toLeftOf="@id/image_shuffle"
+            app:layout_constraintLeft_toRightOf="@id/image_pause"
+            android:id="@+id/image_next"
+            android:layout_marginTop="@dimen/dp_16"
+            app:layout_constraintTop_toBottomOf="@id/seek_bar_play_track"
+            android:layout_width="@dimen/dp_56"
+            android:layout_height="@dimen/dp_56" />
+        <ImageView
+            android:contentDescription="@string/title_shuffle"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/image_next"
+            android:id="@+id/image_shuffle"
+            android:layout_marginTop="@dimen/dp_16"
+            app:layout_constraintTop_toBottomOf="@id/seek_bar_play_track"
+            android:layout_width="@dimen/dp_36"
+            android:layout_height="@dimen/dp_36" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
+
