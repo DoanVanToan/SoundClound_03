@@ -25,6 +25,7 @@
             android:layout_height="@dimen/dp_36" />
 
         <TextView
+            android:text="@{viewModel.title}"
             android:textColor="@color/color_white"
             android:id="@+id/text_view_track_name"
             android:textSize="@dimen/sp_14"
@@ -37,6 +38,7 @@
 
         <TextView
             android:textColor="@color/textFade"
+            android:text="@{viewModel.artist}"
             android:id="@+id/text_view_artist_track"
             android:textSize="@dimen/sp_12"
             android:layout_marginTop="@dimen/dp_8"
@@ -60,6 +62,7 @@
             android:layout_height="@dimen/dp_250" />
 
         <ImageView
+            android:onClick="@{viewModel::onClickLike}"
             android:contentDescription="@string/title_like"
             android:id="@+id/image_view_like_track"
             android:src="@drawable/ic_favorite_border_black_24dp"
@@ -71,6 +74,7 @@
             android:layout_height="@dimen/dp_32" />
 
         <ImageView
+            android:onClick="@{viewModel::onClickDownload}"
             android:contentDescription="@string/title_download"
             android:src="@drawable/ic_file_download_black_24dp"
             android:layout_width="@dimen/dp_32"
@@ -92,6 +96,7 @@
             android:layout_height="wrap_content" />
 
         <ImageView
+            android:onClick="@{viewModel::onClickLoop}"
             android:contentDescription="@string/title_loop"
             android:id="@+id/image_view_loop"
             app:layout_constraintHorizontal_chainStyle="spread"
@@ -102,6 +107,7 @@
             android:layout_width="@dimen/dp_36"
             android:layout_height="@dimen/dp_36" />
         <ImageView
+            android:onClick="@{viewModel::onClickPrevious}"
             android:contentDescription="@string/title_previous"
             app:layout_constraintRight_toLeftOf="@id/image_pause"
             android:id="@+id/image_view_previous"
@@ -111,6 +117,7 @@
             android:layout_width="@dimen/dp_56"
             android:layout_height="@dimen/dp_56" />
         <ImageView
+            android:onClick="@{viewModel::onClickPause}"
             android:contentDescription="@string/title_pause"
             app:layout_constraintRight_toLeftOf="@id/image_next"
             android:id="@+id/image_pause"
@@ -120,6 +127,7 @@
             android:layout_width="@dimen/dp_56"
             android:layout_height="@dimen/dp_56" />
         <ImageView
+            android:onClick="@{viewModel::onClickNext}"
             android:contentDescription="@string/title_next"
             app:layout_constraintRight_toLeftOf="@id/image_shuffle"
             app:layout_constraintLeft_toRightOf="@id/image_pause"
@@ -129,6 +137,7 @@
             android:layout_width="@dimen/dp_56"
             android:layout_height="@dimen/dp_56" />
         <ImageView
+            android:onClick="@{viewModel::onClickShuffle}"
             android:contentDescription="@string/title_shuffle"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toRightOf="@id/image_next"

@@ -7,5 +7,5 @@ import com.framgia.soundclound.data.model.Track;
  */
 
 public interface TrackClickListener {
-    void onItemTrackClick(Track track);
+    void onItemTrackClick(Track track, int position);
 }

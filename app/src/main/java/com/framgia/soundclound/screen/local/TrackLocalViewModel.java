@@ -11,6 +11,8 @@ import android.support.v4.content.ContextCompat;
 
 import com.framgia.soundclound.BR;
 import com.framgia.soundclound.data.model.Track;
+import com.framgia.soundclound.data.source.TrackRepository;
+import com.framgia.soundclound.data.source.remote.TrackRemoteDataSource;
 import com.framgia.soundclound.util.Constant;
 
 /**
@@ -21,14 +23,21 @@ public class TrackLocalViewModel extends BaseObservable implements TrackClickLis
 
     private TrackLocalAdapter mTrackLocalAdapter;
     private Context mContext;
+    private TrackRepository mTrackRepository;
     
     public TrackLocalViewModel(Context context) {
         mContext = context;
+        mTrackRepository = new TrackRepository(TrackRemoteDataSource.getInstance());
         mTrackLocalAdapter = new TrackLocalAdapter();
         mTrackLocalAdapter.setTrackClickLisener(this);
         if (checkPermisson()) {
-            // TODO: 1/11/2018  getData 
+            // TODO: 1/11/2018  getData
+            getTracks();
         }
+    }
+
+    public void getTracks() {
+        mTrackLocalAdapter.getData(mTrackRepository.getLocalTrack());
     }
 
     @Bindable

@@ -1,6 +1,4 @@
 package com.framgia.soundclound.data.source;
-
-import android.content.Context;
 import android.support.annotation.NonNull;
 
 import com.framgia.soundclound.data.model.Track;

@@ -7,6 +7,7 @@ import com.framgia.soundclound.BuildConfig;
  */
 
 public class StringUtil {
+
     public static String  convertUrl(String url, String genre, int limit, int offSet) {
         StringBuffer stringBuffer = new StringBuffer(url);
         stringBuffer.append(genre)
@@ -23,5 +24,14 @@ public class StringUtil {
                 .append('=').append(offSet);
         return stringBuffer.toString();
 
+    }
+
+    public static String getUrlDownload(String url) {
+        StringBuffer stringBuffer = new StringBuffer(url);
+        stringBuffer.append("/stream?")
+                .append(Constant.CLIENT_ID)
+                .append('=')
+                .append(BuildConfig.API_KEY);
+        return  stringBuffer.toString();
     }
 }
