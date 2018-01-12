@@ -19,6 +19,8 @@ public class Constant {
 
     public static final String EXTRA_GENRE = "com.framgia.soundcloud.EXTRA_GENRE_NAME";
     public static final String ARGUMENT_TRACK = "com.framgia.soundcloud.ARGUMENT_TRACK";
+    public static final String EXTRA_ID_ALBUM = "com.framgia.soundcloud.EXTRA_ID_ALBUM";
+    public static final int VALUE_ID_ALBUM_NULL = -1;
 
     public static final int LIMIT_DEFAULT = 20;
     public static final int OFF_SET_DEFAULT = 0;

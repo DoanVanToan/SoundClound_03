@@ -15,6 +15,7 @@ import com.framgia.soundclound.BR;
 import com.framgia.soundclound.R;
 import com.framgia.soundclound.data.model.Album;
 import com.framgia.soundclound.data.source.repository.AlbumRepository;
+import com.framgia.soundclound.screen.detailalbum.DetailAlbumActivity;
 
 /**
  * Created by Bui Danh Nam on 8/1/2018.
@@ -82,7 +83,10 @@ public class PlaylistModelView extends BaseObservable implements OnItemAlbumClic
 
     @Override
     public void onItemClick(Album album) {
-        //// TODO: 10/1/2018  click item
+        if (album == null) {
+            return;
+        }
+        mContext.startActivity(DetailAlbumActivity.getInstance(mContext, album.getId()));
     }
 
     @Override

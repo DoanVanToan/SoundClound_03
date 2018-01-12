@@ -110,8 +110,7 @@ public class AlbumLocalDataSource extends SQLiteOpenHelper implements AlbumDataS
                 ID_ALBUM + "=?",
                 new String[]{String.valueOf(idAlbum)},
                 null, null, null, null);
-        if (cursor.getCount() > 0) {
-            cursor.close();
+        if (cursor != null && cursor.moveToFirst()) {
             return parseCursorToAlbum(cursor);
         }
         return null;
@@ -133,16 +132,18 @@ public class AlbumLocalDataSource extends SQLiteOpenHelper implements AlbumDataS
     }
 
     @Override
-    public boolean addTrackinAlbum(Album album, Track track) {
-        if (album == null) {
+    public boolean addTrack(int idAlbum, Track track) {
+        if (track == null) {
             return false;
         }
-        if (track == null) {
+        Album album = getAlbumById(idAlbum);
+        if (album == null) {
             return false;
         }
         List<Track> tracksOld = album.getTracks();
         if (tracksOld == null) {
-            return false;
+            tracksOld = new ArrayList<>();
+            return tracksOld.add(track);
         }
         if (tracksOld.contains(track)) {
             return false;
@@ -154,18 +155,30 @@ public class AlbumLocalDataSource extends SQLiteOpenHelper implements AlbumDataS
     }
 
     @Override
-    public boolean remoteTrack(Album album, Track track) {
+    public List<Track> getAllTrack(int idAlbum) {
+        Album album = getAlbumById(idAlbum);
         if (album == null) {
+            return null;
+        }
+        return album.getTracks();
+    }
+
+    @Override
+    public boolean removeTrack(int idAlbum, int idTrack) {
+        Track trackRemove = new Track();
+        trackRemove.setId(idTrack);
+        if (trackRemove == null) {
             return false;
         }
-        if (track == null) {
+        Album album = getAlbumById(idAlbum);
+        if (album == null) {
             return false;
         }
         List<Track> tracksOld = album.getTracks();
         if (tracksOld == null) {
             return false;
         }
-        if (tracksOld.remove(track)) {
+        if (tracksOld.remove(trackRemove)) {
             List<Track> tracksNew = new ArrayList<>(tracksOld);
             album.setTracks(tracksNew);
             return updateAlbum(album);
