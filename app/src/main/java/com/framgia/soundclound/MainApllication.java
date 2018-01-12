@@ -13,6 +13,6 @@ public class MainApllication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        TrackRemoteDataSource.init();
+        TrackRemoteDataSource.init(this);
     }
 }

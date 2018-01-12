@@ -1,5 +1,6 @@
 package com.framgia.soundclound.data.source;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 
 import com.framgia.soundclound.data.model.Track;
@@ -23,4 +24,10 @@ public class TrackRepository implements TrackDataSource {
                              Callback<List<Track>> callback) {
         mRemoteDataSource.getListTrack(url, genre, limit, offSet, callback);
     }
+
+    @Override
+    public List<Track> getLocalTrack() {
+        return mRemoteDataSource.getLocalTrack();
+    }
+
 }

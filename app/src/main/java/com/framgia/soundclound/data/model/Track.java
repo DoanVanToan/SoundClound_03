@@ -19,6 +19,9 @@ public class Track implements Serializable {
     @SerializedName("description")
     @Expose
     private String mDescription;
+    @SerializedName("downloadable")
+    @Expose
+    private boolean mDownloadable;
     @SerializedName("download_count")
     @Expose
     private int mDownloadCount;
@@ -97,7 +100,6 @@ public class Track implements Serializable {
     public void setDownloadCount(int downloadCount) {
         mDownloadCount = downloadCount;
     }
-
 
     public String getDowloadUrl() {
         return mDowloadUrl;
@@ -193,6 +195,14 @@ public class Track implements Serializable {
 
     public void setDisplayDate(String displayDate) {
         mDisplayDate = displayDate;
+    }
+
+    public boolean isDownloadable() {
+        return mDownloadable;
+    }
+
+    public void setDownloadable(boolean downloadable) {
+        mDownloadable = downloadable;
     }
 
     @Override

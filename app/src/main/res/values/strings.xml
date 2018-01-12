@@ -39,5 +39,7 @@
     <string name="title_pause">pause</string>
     <string name="title_next">next</string>
     <string name="title_shuffle">shuffle</string>
+    <string name="title_cantdownload">Bài hát nằm trong danh sách hạn chế</string>
+    <string name="title_candownload">Tải bài hát về máy</string>
 
 </resources>

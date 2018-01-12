@@ -1,7 +1,14 @@
 package com.framgia.soundclound.data.source.remote;
 
+import android.content.ContentResolver;
+import android.content.Context;
+import android.database.Cursor;
+import android.net.Uri;
+import android.provider.MediaStore;
+
 import com.framgia.soundclound.data.model.Collection;
 import com.framgia.soundclound.data.model.CollectionResult;
+import com.framgia.soundclound.data.model.PublisherMetadata;
 import com.framgia.soundclound.data.model.Track;
 import com.framgia.soundclound.data.source.TrackDataSource;
 import com.framgia.soundclound.util.Constant;
@@ -17,17 +24,20 @@ import java.util.List;
 public class TrackRemoteDataSource implements TrackDataSource {
 
     private static TrackRemoteDataSource sTrackRemoteDataSource;
+    private Context mContext;
 
-    public TrackRemoteDataSource() {
+    public TrackRemoteDataSource(Context context) {
+        mContext = context;
+
     }
 
     public static TrackRemoteDataSource getInstance() {
         return sTrackRemoteDataSource;
     }
 
-    public static void init() {
+    public static void init(Context context) {
         if (sTrackRemoteDataSource == null) {
-            sTrackRemoteDataSource = new TrackRemoteDataSource();
+            sTrackRemoteDataSource = new TrackRemoteDataSource(context);
         }
     }
 
@@ -71,4 +81,27 @@ public class TrackRemoteDataSource implements TrackDataSource {
         }).execute(StringUtil.convertUrl(url, genre, limit, offSet));
 
     }
+
+    public List<Track> getLocalTrack() {
+        ContentResolver contentResolver = mContext.getContentResolver();
+        Uri uri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
+        Cursor cursor = contentResolver.query(uri, null, null,
+                null, null);
+        List<Track> listLocal = new ArrayList<>();
+        while (cursor.moveToNext()) {
+            Track track = new Track();
+
+            track.setUri(cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.DATA)));
+            track.setTitle(
+                    cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.TITLE)));
+            track.setFullDuration(
+                    cursor.getInt(cursor.getColumnIndex(MediaStore.Audio.Media.DURATION)));
+            track.setPublisherMetadata(new PublisherMetadata(cursor.getString(
+                    cursor.getColumnIndex(MediaStore.Audio.Media.ARTIST))));
+            listLocal.add(track);
+        }
+        cursor.close();
+        return listLocal;
+    }
+
 }
