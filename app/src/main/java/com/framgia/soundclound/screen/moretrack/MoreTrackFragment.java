@@ -22,7 +22,7 @@ public class MoreTrackFragment extends BottomSheetDialogFragment {
     public static MoreTrackFragment newInstance(Track track) {
         MoreTrackFragment fragment = new MoreTrackFragment();
         Bundle args = new Bundle();
-        args.putSerializable(Constant.ARGUMENT_TRACK, track);
+        args.putParcelable(Constant.ARGUMENT_TRACK, track);
         fragment.setArguments(args);
         return fragment;
     }
@@ -38,7 +38,7 @@ public class MoreTrackFragment extends BottomSheetDialogFragment {
         FragmentMoreTrackBinding moreTrackBinding = DataBindingUtil.inflate(inflater,
                 R.layout.fragment_more_track, container, false);
         moreTrackBinding.setViewModel(new MoreTrackViewModel(getContext(),
-                (Track) getArguments().get(Constant.ARGUMENT_TRACK)));
+                (Track) getArguments().getParcelable(Constant.ARGUMENT_TRACK)));
         return moreTrackBinding.getRoot();
     }
 

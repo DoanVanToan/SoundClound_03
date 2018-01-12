@@ -2,6 +2,7 @@ package com.framgia.soundclound;
 
 import android.app.Application;
 
+import com.framgia.soundclound.data.source.local.SharePreferences;
 import com.framgia.soundclound.data.source.remote.TrackRemoteDataSource;
 
 /**
@@ -14,5 +15,6 @@ public class MainApllication extends Application {
     public void onCreate() {
         super.onCreate();
         TrackRemoteDataSource.init(this);
+        SharePreferences.init(this);
     }
 }

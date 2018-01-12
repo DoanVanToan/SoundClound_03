@@ -35,5 +35,8 @@ public class Constant {
     public static final String DATABASE_NAME = "DB_SOUNDCLOUND";
     public static final int REQUEST_READ_STORAGE = 100;
 
+    public static final String PARCE_LIST_TRACK = "com.framgia.soundcloud.PARCE_TRACK";
+    public static final String EXTRA_TRACK = "com.frangia.soundcloud.EXTRA_TRACK";
+    public static final int INDEX_DEFAULTE = 1;
 }
 
