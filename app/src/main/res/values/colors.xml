@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#252634</color>
+    <color name="colorPrimaryDark">#1e1e29</color>
+    <color name="colorAccent">#9257df</color>
+    <color name="textFade">#8687a1</color>
+    <color name="iconFade">#dbdbe8</color>
     <color name="color_orange">#FF5500</color>
     <color name="color_gray">#666666</color>
     <color name="color_white">#FFFFFF</color>
     <color name="tint_color">#6F000000</color>
+    <color name="background">#151621</color>
+    <color name="background_diaglog">#151621</color>
 </resources>

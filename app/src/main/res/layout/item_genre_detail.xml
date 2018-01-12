@@ -9,7 +9,6 @@
     </data>
 
     <android.support.constraint.ConstraintLayout
-        android:background="@color/color_orange"
         android:layout_width="match_parent"
         android:onClick="@{viewModel::onClickTrack}"
         android:layout_height="@dimen/dp_72" >

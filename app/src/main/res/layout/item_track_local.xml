@@ -9,7 +9,6 @@
     </data>
 
     <android.support.constraint.ConstraintLayout
-        android:background="@color/color_orange"
         android:layout_width="match_parent"
         android:onClick="@{viewModel::onClickTrack}"
         android:layout_height="@dimen/dp_72" >
@@ -27,10 +26,11 @@
             android:layout_height="@dimen/dp_60" />
 
         <TextView
+            android:textColor="@color/color_white"
             android:text="@{viewModel.title}"
             android:layout_marginStart="@dimen/dp_16"
             android:layout_marginTop="@dimen/dp_12"
-            android:textSize="@dimen/sp_12"
+            android:textSize="@dimen/sp_14"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toRightOf="@id/imv_track"
             android:id="@+id/tv_title_track"
@@ -38,6 +38,7 @@
             android:layout_height="wrap_content" />
 
         <TextView
+            android:textColor="@color/textFade"
             android:text="@{viewModel.artist}"
             android:id="@+id/tv_artist"
             app:layout_constraintLeft_toRightOf="@id/imv_track"

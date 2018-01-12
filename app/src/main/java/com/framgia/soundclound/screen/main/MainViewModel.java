@@ -34,17 +34,17 @@ public class MainViewModel extends BaseObservable {
 
     @Bindable
     public int getTabSelectedColor() {
-        return R.color.color_orange;
+        return R.color.colorAccent;
     }
 
     @Bindable
     public int getTabUnSelectedColor() {
-        return R.color.color_gray;
+        return R.color.textFade;
     }
 
     @Bindable
     public int getTabSelectedHome() {
-        return R.color.color_orange;
+        return R.color.colorAccent;
     }
 
 
