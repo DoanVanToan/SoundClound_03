@@ -37,5 +37,7 @@
     <dimen name="icon_dot_margin_right">15dp</dimen>
     <dimen name="icon_dot_w">30dp</dimen>
     <dimen name="icon_dot_h">40dp</dimen>
+    <dimen name="dp_66">66dp</dimen>
+    <dimen name="dp_6">6dp</dimen>
 </resources>
 

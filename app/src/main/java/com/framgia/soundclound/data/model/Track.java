@@ -1,5 +1,8 @@
 package com.framgia.soundclound.data.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -9,13 +12,10 @@ import java.io.Serializable;
  * Created by Sony on 1/5/2018.
  */
 
-public class Track implements Serializable {
+public class Track implements Parcelable {
     @SerializedName("artwork_url")
     @Expose
     private String mArtworkUrl;
-    @SerializedName("comment_count")
-    @Expose
-    private int mCommentCount;
     @SerializedName("description")
     @Expose
     private String mDescription;
@@ -43,9 +43,6 @@ public class Track implements Serializable {
     @SerializedName("permalink_url")
     @Expose
     private String mPermalinkUrl;
-    @SerializedName("playback_count")
-    @Expose
-    private int mPlaybackCount;
     @SerializedName("publisher_metadata")
     @Expose
     private PublisherMetadata mPublisherMetadata;
@@ -69,20 +66,40 @@ public class Track implements Serializable {
     public Track() {
     }
 
+    protected Track(Parcel in) {
+        mArtworkUrl = in.readString();
+        mDescription = in.readString();
+        mDownloadCount = in.readInt();
+        mDowloadUrl = in.readString();
+        mFullDuration = in.readInt();
+        mGenre = in.readString();
+        mId = in.readInt();
+        mLikesCount = in.readInt();
+        mPermalinkUrl = in.readString();
+        mTitle = in.readString();
+        mUri = in.readString();
+        mUserId = in.readInt();
+        mDisplayDate = in.readString();
+    }
+
+    public static final Creator<Track> CREATOR = new Creator<Track>() {
+        @Override
+        public Track createFromParcel(Parcel in) {
+            return new Track(in);
+        }
+
+        @Override
+        public Track[] newArray(int size) {
+            return new Track[size];
+        }
+    };
+
     public String getArtworkUrl() {
         return mArtworkUrl;
     }
 
     public void setArtworkUrl(String artworkUrl) {
         mArtworkUrl = artworkUrl;
-    }
-
-    public int getCommentCount() {
-        return mCommentCount;
-    }
-
-    public void setCommentCount(int commentCount) {
-        mCommentCount = commentCount;
     }
 
     public String getDescription() {
@@ -147,14 +164,6 @@ public class Track implements Serializable {
 
     public void setPermalinkUrl(String permalinkUrl) {
         mPermalinkUrl = permalinkUrl;
-    }
-
-    public int getPlaybackCount() {
-        return mPlaybackCount;
-    }
-
-    public void setPlaybackCount(int playbackCount) {
-        mPlaybackCount = playbackCount;
     }
 
     public PublisherMetadata getPublisherMetadata() {
@@ -224,4 +233,27 @@ public class Track implements Serializable {
         return mId;
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(mArtworkUrl);
+        parcel.writeString(mDescription);
+        parcel.writeInt(mDownloadCount);
+        parcel.writeString(mDowloadUrl);
+        parcel.writeInt(mFullDuration);
+        parcel.writeString(mGenre);
+        parcel.writeInt(mId);
+        parcel.writeInt(mLikesCount);
+        parcel.writeString(mPermalinkUrl);
+        parcel.writeString(mTitle);
+        parcel.writeString(mUri);
+        parcel.writeInt(mUserId);
+        parcel.writeString(mDisplayDate);
+
+    }
+    
 }
