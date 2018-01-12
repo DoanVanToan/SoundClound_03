@@ -100,7 +100,8 @@ public class BindingUtil {
         if (urlImage == null) {
             imageView.setImageResource(R.mipmap.ic_launcher);
         } else {
-            Glide.with(imageView.getContext()).load(urlImage).into(imageView);
+            Glide.with(imageView.getContext()).load(urlImage)
+                    .into(imageView);
         }
     }
 }

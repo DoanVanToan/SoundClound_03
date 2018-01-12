@@ -25,6 +25,7 @@
             android:layout_height="@dimen/dp_36" />
 
         <TextView
+            android:textColor="@color/color_white"
             android:id="@+id/text_view_track_name"
             android:textSize="@dimen/sp_14"
             android:layout_marginStart="@dimen/dp_16"
@@ -35,6 +36,7 @@
             android:layout_height="wrap_content" />
 
         <TextView
+            android:textColor="@color/textFade"
             android:id="@+id/text_view_artist_track"
             android:textSize="@dimen/sp_12"
             android:layout_marginTop="@dimen/dp_8"
@@ -79,6 +81,7 @@
             app:layout_constraintTop_toBottomOf="@id/image_view_play_track" />
 
         <SeekBar
+            android:background="@color/iconFade"
             android:layout_marginStart="@dimen/dp_45"
             android:id="@+id/seek_bar_play_track"
             android:layout_marginTop="@dimen/dp_16"
