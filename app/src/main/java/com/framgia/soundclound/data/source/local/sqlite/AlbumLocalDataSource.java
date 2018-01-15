@@ -124,8 +124,7 @@ public class AlbumLocalDataSource extends SQLiteOpenHelper implements AlbumDataS
                 NAME_ALBUM + "=?",
                 new String[]{String.valueOf(nameAlbum)},
                 null, null, null, null);
-        if (cursor.getCount() > 0) {
-            cursor.close();
+        if (cursor != null && cursor.moveToFirst()) {
             return parseCursorToAlbum(cursor);
         }
         return null;
@@ -143,7 +142,9 @@ public class AlbumLocalDataSource extends SQLiteOpenHelper implements AlbumDataS
         List<Track> tracksOld = album.getTracks();
         if (tracksOld == null) {
             tracksOld = new ArrayList<>();
-            return tracksOld.add(track);
+            tracksOld.add(track);
+            album.setTracks(tracksOld);
+            return updateAlbum(album);
         }
         if (tracksOld.contains(track)) {
             return false;
@@ -247,7 +248,6 @@ public class AlbumLocalDataSource extends SQLiteOpenHelper implements AlbumDataS
         int indexImage = cursor.getColumnIndex(IMAGE_ALBUM);
         int indexNumberSong = cursor.getColumnIndex(NUMBER_SONG);
         int indexListTrack = cursor.getColumnIndex(LIST_TRACK);
-
         Album album = new Album();
         album.setId(cursor.getInt(indexKeyName));
         album.setName(cursor.getString(indexNameAlbum));

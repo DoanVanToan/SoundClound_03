@@ -23,6 +23,7 @@
         <activity android:name=".screen.detailgenre.GenreDetailActivity" />
         <activity android:name=".screen.playtrack.PlayTrackActivity"/>
         <activity android:name=".screen.detailalbum.DetailAlbumActivity"/>
+        <activity android:name=".screen.addtracktoalbum.AddTrackActivity"/>
     </application>
 
 </manifest>

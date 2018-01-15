@@ -15,6 +15,7 @@ import com.framgia.soundclound.BR;
 import com.framgia.soundclound.R;
 import com.framgia.soundclound.data.model.Album;
 import com.framgia.soundclound.data.source.repository.AlbumRepository;
+import com.framgia.soundclound.screen.addtracktoalbum.AddTrackActivity;
 import com.framgia.soundclound.screen.detailalbum.DetailAlbumActivity;
 
 /**
@@ -66,6 +67,9 @@ public class PlaylistModelView extends BaseObservable implements OnItemAlbumClic
                 boolean result = AlbumRepository.getInstance(mContext).addAlbum(albumTemp);
                 if (result) {
                     updateUI();
+                    int id = AlbumRepository.getInstance(mContext).getAlbumByName(
+                            albumTemp.getName()).getId();
+                    mContext.startActivity(AddTrackActivity.getInstance(mContext, id));
                 } else {
                     Toast.makeText(
                             mContext, R.string.msg_err_name_exist, Toast.LENGTH_SHORT).show();
@@ -74,6 +78,8 @@ public class PlaylistModelView extends BaseObservable implements OnItemAlbumClic
         });
         builder.setNegativeButton(R.string.action_cancel, null);
         builder.show();
+
+
     }
 
     private void updateUI() {
