@@ -58,4 +58,5 @@ public class MoreTrackViewModel extends BaseObservable {
             trackDownloadManager.download();
         }
     }
+    
 }

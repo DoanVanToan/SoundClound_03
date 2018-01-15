@@ -14,6 +14,7 @@
         android:layout_height="@dimen/dp_72" >
 
         <ImageView
+            imgResource="@{viewModel.url}"
             android:contentDescription="@string/image_track"
             android:id="@+id/imv_track"
             app:layout_constraintRight_toLeftOf="@id/tv_title_track"
@@ -26,10 +27,11 @@
             android:layout_height="@dimen/dp_60" />
 
         <TextView
+            android:textColor="@color/color_white"
             android:text="@{viewModel.title}"
             android:layout_marginLeft="@dimen/dp_16"
             android:layout_marginTop="@dimen/dp_12"
-            android:textSize="@dimen/sp_12"
+            android:textSize="@dimen/sp_14"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toRightOf="@id/imv_track"
             android:id="@+id/tv_title_track"
@@ -37,6 +39,7 @@
             android:layout_height="wrap_content" />
 
         <TextView
+            android:textColor="@color/textFade"
             android:text="@{viewModel.artist}"
             android:id="@+id/tv_artist"
             app:layout_constraintLeft_toRightOf="@id/imv_track"

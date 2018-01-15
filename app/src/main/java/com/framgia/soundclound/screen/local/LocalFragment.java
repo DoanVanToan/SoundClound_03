@@ -46,6 +46,7 @@ public class LocalFragment extends Fragment {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == Constant.REQUEST_READ_STORAGE) {
             // TODO: 1/11/2018
+            mViewModel.getTracks();
         }
     }
 

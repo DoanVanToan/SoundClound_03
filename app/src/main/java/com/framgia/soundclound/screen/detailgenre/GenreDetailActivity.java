@@ -31,6 +31,7 @@ public class GenreDetailActivity extends AppCompatActivity {
         GenreDetailViewModel mViewModel = new GenreDetailViewModel(this, getIntent().getExtras()
                 .getString(Constant.EXTRA_GENRE));
         activityGenreDetailBinding.setViewModel(mViewModel);
+        getSupportActionBar().hide();
     }
 
 }

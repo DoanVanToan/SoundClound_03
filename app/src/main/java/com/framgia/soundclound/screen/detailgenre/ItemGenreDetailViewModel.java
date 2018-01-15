@@ -14,12 +14,19 @@ public class ItemGenreDetailViewModel extends BaseObservable {
     private TrackClickListener mTrackClickListener;
     private MoreInfoClickListener mMoreInfoClickListener;
     private Track mTrack;
+    private int mPosition;
 
-    public ItemGenreDetailViewModel(Track track, TrackClickListener trackClickListener,
+    public ItemGenreDetailViewModel(Track track, int position,
+                                    TrackClickListener trackClickListener,
                                     MoreInfoClickListener moreInfoClickListener) {
         mTrack = track;
+        mPosition = position;
         mMoreInfoClickListener = moreInfoClickListener;
         mTrackClickListener = trackClickListener;
+    }
+
+    public String getPosition() {
+        return String.valueOf(mPosition);
     }
 
     public String getTitle() {
@@ -42,7 +49,7 @@ public class ItemGenreDetailViewModel extends BaseObservable {
         if (mTrackClickListener == null) {
             return;
         }
-        mTrackClickListener.onItemTrackClick(mTrack);
+        mTrackClickListener.onItemTrackClick(mTrack, mPosition);
     }
 
     public void onMoreInfoClick(View view) {

@@ -54,6 +54,10 @@ public class GenreDetailAdapter extends
         mTrackClickListener = trackClickListener;
     }
 
+    public List<Track> getData() {
+        return mTracks;
+    }
+
     public void addData(List<Track> tracks) {
         if (tracks == null) {
             return;
@@ -65,7 +69,6 @@ public class GenreDetailAdapter extends
     /**
      * Created by Sony on 1/5/2018.
      */
-
     public class GenreDetailViewHolder extends RecyclerView.ViewHolder {
         private ItemGenreDetailBinding mBinding;
         private MoreInfoClickListener moreInfoClickListener;
@@ -85,7 +88,7 @@ public class GenreDetailAdapter extends
                 return;
             }
             mBinding.executePendingBindings();
-            mBinding.setViewModel(new ItemGenreDetailViewModel(track,
+            mBinding.setViewModel(new ItemGenreDetailViewModel(track, getAdapterPosition(),
                     trackClickListener, moreInfoClickListener));
         }
 

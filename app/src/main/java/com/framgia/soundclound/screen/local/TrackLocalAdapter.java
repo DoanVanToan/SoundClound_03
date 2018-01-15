@@ -34,7 +34,7 @@ public class TrackLocalAdapter extends
         return new ItemTrackLocalViewHolder(itemTrackLocalBinding, mTrackClickLisener);
     }
 
-    public void addData(List<Track> tracks) {
+    public void getData(List<Track> tracks) {
         if (tracks == null) {
             return;
         }
