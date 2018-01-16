@@ -44,5 +44,6 @@
     <string name="title_shuffle">shuffle</string>
     <string name="title_cantdownload">Bài hát nằm trong danh sách hạn chế</string>
     <string name="title_candownload">Tải bài hát về máy</string>
+    <string name="img_notifi">img_notifi</string>
 
 </resources>

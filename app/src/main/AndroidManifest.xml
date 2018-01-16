@@ -3,7 +3,9 @@
     package="com.framgia.soundclound">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
 
     <application
         android:name=".MainApllication"
@@ -21,9 +23,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".screen.detailgenre.GenreDetailActivity" />
-        <activity android:name=".screen.playtrack.PlayTrackActivity"/>
-        <activity android:name=".screen.detailalbum.DetailAlbumActivity"/>
-        <activity android:name=".screen.addtracktoalbum.AddTrackActivity"/>
+        <activity android:name=".screen.detailalbum.DetailAlbumActivity" />
+        <activity android:name=".screen.addtracktoalbum.AddTrackActivity" />
+        <activity
+            android:name=".screen.playtrack.PlayTrackActivity"
+            android:launchMode="singleTop" />
+
+        <service android:name=".service.MusicService" />
     </application>
 
 </manifest>

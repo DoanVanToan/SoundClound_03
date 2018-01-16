@@ -25,7 +25,8 @@ public class Constant {
     public static final int LIMIT_DEFAULT = 20;
     public static final int OFF_SET_DEFAULT = 0;
 
-    public static final String LINK_DEFAULT = "https://zmp3-static.zadn.vn/skins/zmp3-v5.1/images/logo200.png";
+    public static final String LINK_DEFAULT =
+            "https://zmp3-static.zadn.vn/skins/zmp3-v5.1/images/logo200.png";
     public static final String ERROR_TEXT = "error";
 
     public static final int NUM_COLUMN_GRID = 3;
@@ -41,5 +42,12 @@ public class Constant {
     public static final String FILE_EXTENTION = ".mp3";
     public static final int ZERO = 0;
     public static final int LIMITT = 10;
+    public static final int ID_FOREGROUND_SERVICE = 101;
+    public static final String ACTION_MAIN = "com.framgia.soundclound.action.main";
+    public static final String ACTION_PREV = "com.framgia.soundclound.action.action.prev";
+    public static final String ACTION_PLAY = "com.framgia.soundclound.action.action.play";
+    public static final String ACTION_NEXT = "com.framgia.soundclound.action.action.next";
+    public static final String ACTION_DISMIS = "com.framgia.soundclound.action.action.dismis";
+    public static final String ACTION_NOTIFI_CHANGE =
+            "com.framgia.soundclound.action.action.change";
 }
-
