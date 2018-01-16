@@ -6,8 +6,6 @@ import android.os.Parcelable;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.io.Serializable;
-
 /**
  * Created by Sony on 1/5/2018.
  */
@@ -59,6 +57,8 @@ public class Track implements Parcelable {
     @Expose
     private String mDisplayDate;
 
+    private boolean mChecked;
+
     public Track(String title) {
         mTitle = title;
     }
@@ -80,6 +80,13 @@ public class Track implements Parcelable {
         mUri = in.readString();
         mUserId = in.readInt();
         mDisplayDate = in.readString();
+    }
+    public boolean isChecked() {
+        return mChecked;
+    }
+
+    public void setChecked(boolean checked) {
+        mChecked = checked;
     }
 
     public static final Creator<Track> CREATOR = new Creator<Track>() {
@@ -255,5 +262,5 @@ public class Track implements Parcelable {
         parcel.writeString(mDisplayDate);
 
     }
-    
+
 }
