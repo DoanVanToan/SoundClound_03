@@ -65,8 +65,8 @@ public class AlbumRepository implements AlbumDataSource {
     }
 
     @Override
-    public boolean removeTrack(int idAlbum, int idTrack) {
-        return mLocalDataSource.removeTrack(idAlbum, idTrack);
+    public boolean removeTrack(int idAlbum, Track track) {
+        return mLocalDataSource.removeTrack(idAlbum, track);
     }
 
 

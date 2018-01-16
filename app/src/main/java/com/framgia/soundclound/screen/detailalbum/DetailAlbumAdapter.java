@@ -10,7 +10,6 @@ import com.framgia.soundclound.data.model.Track;
 import com.framgia.soundclound.databinding.ItemAlbumDetailBinding;
 import com.framgia.soundclound.screen.BaseOnItemClick;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -22,8 +21,8 @@ public class DetailAlbumAdapter extends
     private List<Track> mTracks;
     private BaseOnItemClick<Track> mOnItemClick;
 
-    public DetailAlbumAdapter() {
-        mTracks = new ArrayList<>();
+    public DetailAlbumAdapter(List<Track> tracks) {
+        mTracks = tracks;
     }
 
     @Override
@@ -36,7 +35,7 @@ public class DetailAlbumAdapter extends
 
     @Override
     public void onBindViewHolder(AlbumDetailViewHolder holder, int position) {
-        holder.mBinding.setTrack(mTracks.get(position));
+        holder.bindData(mTracks.get(position));
     }
 
     public void setOnItemClick(BaseOnItemClick<Track> onItemClick) {
@@ -48,10 +47,11 @@ public class DetailAlbumAdapter extends
         return mTracks != null ? mTracks.size() : 0;
     }
 
-    public void addData(List<Track> tracks) {
+    public void updateData(List<Track> tracks) {
         if (tracks == null) {
             return;
         }
+        mTracks.clear();
         mTracks.addAll(tracks);
         notifyDataSetChanged();
     }

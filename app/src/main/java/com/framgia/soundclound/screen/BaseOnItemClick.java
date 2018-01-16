@@ -7,7 +7,7 @@ import android.widget.ImageView;
  */
 
 public interface BaseOnItemClick<T> {
-    void onItemClick(T t);
+    void onItemClick(T t, int pos);
 
     void onIconMoreClick(ImageView imageView, T t);
 }

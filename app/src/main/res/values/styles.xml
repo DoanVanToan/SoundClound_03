@@ -8,4 +8,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="BorderWhite" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorControlNormal">@color/textFade</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
 </resources>
