@@ -16,7 +16,6 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/item_album_h"
-        android:background="@drawable/background_item_recycleview"
         android:onClick="@{()->listener.onItemClick(album)}">
 
         <ImageView

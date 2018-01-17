@@ -39,5 +39,7 @@ public class Constant {
     public static final String EXTRA_TRACK = "com.frangia.soundcloud.EXTRA_TRACK";
     public static final int INDEX_DEFAULTE = 1;
     public static final String FILE_EXTENTION = ".mp3";
+    public static final int ZERO = 0;
+    public static final int LIMITT = 10;
 }
 

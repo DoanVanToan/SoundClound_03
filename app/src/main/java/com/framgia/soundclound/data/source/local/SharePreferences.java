@@ -21,6 +21,7 @@ public class SharePreferences {
     private static final String LIST_TRACK = "listtrack";
     private static final String TRACK = "track";
     private static final String INDEX = "index";
+    private static final String GENRE = "genre";
 
     private SharedPreferences mSharedPreferences;
 
@@ -62,6 +63,14 @@ public class SharePreferences {
 
     public int getIndex() {
         return mSharedPreferences.getInt(INDEX, Constant.INDEX_DEFAULTE);
+    }
+
+    public void putGenre(String genre) {
+        mSharedPreferences.edit().putString(GENRE, genre).apply();
+    }
+
+    public String getGenre() {
+        return mSharedPreferences.getString(GENRE, "");
     }
 
 }
