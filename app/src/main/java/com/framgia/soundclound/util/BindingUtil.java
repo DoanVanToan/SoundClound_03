@@ -104,4 +104,11 @@ public class BindingUtil {
                     .into(imageView);
         }
     }
+
+    @BindingAdapter({"scrollListener"})
+    public static void setScrollListener(RecyclerView recyclerView,
+                                         RecyclerView.OnScrollListener onScrollListener) {
+        recyclerView.addOnScrollListener(onScrollListener);
+    }
+
 }
