@@ -18,6 +18,8 @@ import com.framgia.soundclound.data.source.repository.AlbumRepository;
 import com.framgia.soundclound.screen.addtracktoalbum.AddTrackActivity;
 import com.framgia.soundclound.screen.detailalbum.DetailAlbumActivity;
 
+import java.util.List;
+
 /**
  * Created by Bui Danh Nam on 8/1/2018.
  */
@@ -25,11 +27,11 @@ import com.framgia.soundclound.screen.detailalbum.DetailAlbumActivity;
 public class PlaylistModelView extends BaseObservable implements OnItemAlbumClick {
     private PlaylistAdapter mPlaylistAdapter;
     private Context mContext;
+    private List<Album> mAlbums;
 
     public PlaylistModelView(Context context) {
         mContext = context;
-        mPlaylistAdapter = new PlaylistAdapter(
-                AlbumRepository.getInstance(mContext).getAllAlbum());
+        mPlaylistAdapter = new PlaylistAdapter(mAlbums);
         mPlaylistAdapter.setOnItemAlbumClick(this);
     }
 
@@ -161,11 +163,15 @@ public class PlaylistModelView extends BaseObservable implements OnItemAlbumClic
                         boolean resultDelAlbum = AlbumRepository.getInstance(mContext)
                                 .deleteAlbum(album);
                         if (resultDelAlbum) {
-                            mPlaylistAdapter.updateAlbums(
-                                    AlbumRepository.getInstance(mContext).getAllAlbum());
+                            updateData();
                         }
                     }
                 });
         builder.setNegativeButton(R.string.action_cancel, null);
+    }
+
+    public void updateData() {
+        mPlaylistAdapter.updateAlbums(
+                AlbumRepository.getInstance(mContext).getAllAlbum());
     }
 }

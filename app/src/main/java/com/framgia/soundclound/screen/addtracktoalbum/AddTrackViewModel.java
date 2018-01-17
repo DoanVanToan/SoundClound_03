@@ -24,7 +24,7 @@ import java.util.List;
  */
 
 public class AddTrackViewModel extends BaseObservable implements CheckCliclListener {
-    
+
     private AddTrackAdapter mAddTrackAdapter;
     private Context mContext;
     private TrackRepository mTrackRepository;
@@ -41,7 +41,7 @@ public class AddTrackViewModel extends BaseObservable implements CheckCliclListe
             getData();
         }
     }
-    
+
     public void getData() {
         mTracks = mTrackRepository.getLocalTrack();
         mAddTrackAdapter.addData(mTracks);
@@ -72,14 +72,16 @@ public class AddTrackViewModel extends BaseObservable implements CheckCliclListe
     public void onClickSuccess() {
         for (Track track : mTracks) {
             if (!track.isChecked()) {
-                AlbumRepository.getInstance(mContext).addTrack(mId, track);
+                continue;
             }
+            AlbumRepository.getInstance(mContext).addTrack(mId, track);
         }
         mContext.startActivity(DetailAlbumActivity.getInstance(mContext, mId));
+
     }
 
     @Override
     public void onTrackClickListenner(Track track, int position, boolean isChecked) {
-        mTracks.get(position).setChecked(isChecked);
+        mTracks.get(position).setChecked(!isChecked);
     }
 }

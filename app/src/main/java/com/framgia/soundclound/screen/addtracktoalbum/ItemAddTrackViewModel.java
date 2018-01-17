@@ -4,9 +4,9 @@ import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 import android.view.View;
 
-import com.framgia.soundclound.BR;
 import com.framgia.soundclound.data.model.Track;
 import com.framgia.soundclound.util.Constant;
+
 
 /**
  * Created by ADMIN on 1/14/2018.
@@ -47,7 +47,7 @@ public class ItemAddTrackViewModel extends BaseObservable {
         if (mCheckCliclListener == null) {
             return;
         }
-        mCheckCliclListener.onTrackClickListenner(mTrack, mPosition, mIsChecked);
+        mCheckCliclListener.onTrackClickListenner(mTrack, mPosition, isChecked());
         setChecked(!mIsChecked);
     }
 
@@ -58,7 +58,7 @@ public class ItemAddTrackViewModel extends BaseObservable {
 
     public void setChecked(boolean checked) {
         mIsChecked = checked;
-        notifyPropertyChanged(BR.checked);
+        notifyPropertyChanged(com.framgia.soundclound.BR.checked);
     }
 
 }

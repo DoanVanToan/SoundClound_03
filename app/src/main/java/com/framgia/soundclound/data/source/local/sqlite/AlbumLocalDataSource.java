@@ -146,13 +146,20 @@ public class AlbumLocalDataSource extends SQLiteOpenHelper implements AlbumDataS
             album.setTracks(tracksOld);
             return updateAlbum(album);
         }
-        if (tracksOld.contains(track)) {
+        if (checkTrackExistAlbum(tracksOld, track)) {
             return false;
         }
         tracksOld.add(track);
-        List<Track> tracksNew = new ArrayList<>(tracksOld);
-        album.setTracks(tracksNew);
         return updateAlbum(album);
+    }
+
+    private boolean checkTrackExistAlbum(List<Track> tracks, Track track) {
+        for (Track trackTemp : tracks) {
+            if (track.getUri().equals(trackTemp.getUri())) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
@@ -165,10 +172,8 @@ public class AlbumLocalDataSource extends SQLiteOpenHelper implements AlbumDataS
     }
 
     @Override
-    public boolean removeTrack(int idAlbum, int idTrack) {
-        Track trackRemove = new Track();
-        trackRemove.setId(idTrack);
-        if (trackRemove == null) {
+    public boolean removeTrack(int idAlbum, Track track) {
+        if (track == null) {
             return false;
         }
         Album album = getAlbumById(idAlbum);
@@ -179,12 +184,12 @@ public class AlbumLocalDataSource extends SQLiteOpenHelper implements AlbumDataS
         if (tracksOld == null) {
             return false;
         }
-        if (tracksOld.remove(trackRemove)) {
-            List<Track> tracksNew = new ArrayList<>(tracksOld);
-            album.setTracks(tracksNew);
-            return updateAlbum(album);
+        for (int i = 0; i < tracksOld.size(); i++) {
+            if (track.getUri().equals(tracksOld.get(i).getUri())) {
+                tracksOld.remove(i);
+            }
         }
-        return false;
+        return updateAlbum(album);
     }
 
     @Override
@@ -252,8 +257,8 @@ public class AlbumLocalDataSource extends SQLiteOpenHelper implements AlbumDataS
         album.setId(cursor.getInt(indexKeyName));
         album.setName(cursor.getString(indexNameAlbum));
         album.setImage(cursor.getString(indexImage));
-        album.setNumberSong(cursor.getInt(indexNumberSong));
         List<Track> tracks = getToJson(cursor.getString(indexListTrack));
+        album.setNumberSong(tracks != null ? tracks.size() : 0);
         album.setTracks(tracks);
         return album;
     }

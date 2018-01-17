@@ -26,7 +26,10 @@
     <string name="action_ok">OK</string>
     <string name="action_cancel">Cancel</string>
     <string name="msg_delele_album">Do you want delete album ? </string>
+    <string name="msg_remove_track_album">Do you want remove track ? </string>
     <string name="action_add">Add</string>
+    <string name="action_remove">Remove</string>
+    <string name="action_add_favorite">Add Favorite</string>
 
     <string name="title_add_favorite">Thêm vào danh sách bài hát yêu thích</string>
     <string name="title_download">Tải bài hát về máy</string>

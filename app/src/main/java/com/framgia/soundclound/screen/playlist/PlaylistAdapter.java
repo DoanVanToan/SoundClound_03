@@ -28,6 +28,9 @@ public class PlaylistAdapter extends RecyclerView.Adapter<PlaylistAdapter.ViewHo
     }
 
     public void updateAlbums(List<Album> albums) {
+        if (albums == null) {
+            return;
+        }
         mAlbums = albums;
         notifyDataSetChanged();
     }

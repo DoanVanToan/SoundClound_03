@@ -26,7 +26,7 @@ public interface AlbumDataSource {
 
     List<Track> getAllTrack(int idAlbum);
 
-    boolean removeTrack(int idAlbum, int idTrack);
+    boolean removeTrack(int idAlbum, Track track);
 
     boolean renameAlbum(Album album);
 }

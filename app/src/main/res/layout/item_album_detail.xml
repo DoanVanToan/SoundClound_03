@@ -1,60 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<layout>
+
     <data>
 
         <variable
             name="track"
-            type="com.framgia.soundclound.data.model.Track"/>
+            type="com.framgia.soundclound.data.model.Track" />
+
         <variable
             name="listener"
-            type="com.framgia.soundclound.screen.BaseOnItemClick"/>
+            type="com.framgia.soundclound.screen.BaseOnItemClick" />
     </data>
 
-    <android.support.constraint.ConstraintLayout
-        android:background="@color/color_orange"
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_72" >
+        android:layout_height="@dimen/dp_72"
+        android:background="@drawable/background_item_recycleview">
 
         <ImageView
-            android:contentDescription="@string/image_track"
             android:id="@+id/imv_track"
-            app:layout_constraintRight_toLeftOf="@id/tv_title_track"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginStart="@dimen/dp_8"
-            android:background="@color/color_gray"
             android:layout_width="@dimen/dp_60"
-            android:layout_height="@dimen/dp_60" />
+            android:layout_height="@dimen/dp_60"
+            android:layout_marginStart="@dimen/dp_8"
+            android:contentDescription="@string/image_track"
+            app:imgResource="@{track.artworkUrl}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/tv_title_track"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:layout_marginStart="@dimen/dp_16"
-            android:layout_marginTop="@dimen/dp_12"
-            android:textSize="@dimen/sp_12"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/imv_track"
             android:id="@+id/tv_title_track"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_12"
+            android:text="@{track.title}"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toRightOf="@id/imv_track"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_artist"
-            app:layout_constraintLeft_toRightOf="@id/imv_track"
-            app:layout_constraintTop_toBottomOf="@id/tv_title_track"
-            android:layout_marginTop="4dp"
-            android:textSize="@dimen/sp_12"
-            android:layout_marginStart="@dimen/dp_16"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="4dp"
+            android:text="@{track.publisherMetadata.artist}"
+            android:textColor="@color/textFade"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintLeft_toRightOf="@id/imv_track"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_track" />
 
         <ImageView
             android:id="@+id/image_view_more"
-            android:contentDescription="@string/image_more_info"
             android:layout_width="@dimen/dp_24"
             android:layout_height="match_parent"
-            android:src="@drawable/ic_more_vert_black_24dp"
             android:layout_marginStart="@dimen/dp_12"
+            android:contentDescription="@string/image_more_info"
+            android:onClick="@{() -> listener.onIconMoreClick( imageViewMore, track)}"
+            android:src="@drawable/ic_more_vert_black_24dp"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
