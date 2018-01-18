@@ -17,6 +17,8 @@ import com.bumptech.glide.Glide;
 import com.framgia.soundclound.R;
 import com.framgia.soundclound.screen.main.TabType;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 
 /**
  * Created by Sony on 1/4/2018.
@@ -111,4 +113,8 @@ public class BindingUtil {
         recyclerView.addOnScrollListener(onScrollListener);
     }
 
+    @BindingAdapter("imgResource")
+    public static void setImage(CircleImageView imageView, String urlImage) {
+        imageView.setImageResource(R.drawable.img_background_genres);
+    }
 }
